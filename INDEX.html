@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El bosque de las figuras literarias</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Portada -->
+  <section id="portada" class="pantalla">
+    <h1>El bosque de las figuras literarias</h1>
+    <button onclick="mostrarPantalla('actividad1')">Empezar</button>
+  </section>
+
+  <!-- Actividad 1: Completa con creatividad -->
+  <section id="actividad1" class="pantalla oculto">
+    <h2>ACTIVIDAD 1: “Completa con creatividad”</h2>
+    <p><strong>Frase:</strong> “Sus ojos eran <input type="text" id="frase1">.” <em>(Metáfora)</em></p>
+    <button onclick="evaluarFrase('frase1', 'metáfora')">Evaluar frase</button>
+    <button onclick="resetear('frase1')">Resetear</button>
+    <p id="feedback1"></p>
+    <button onclick="mostrarPantalla('actividad2')">Siguiente</button>
+  </section>
+
+  <!-- Actividad 2: Cazador de figuras -->
+  <section id="actividad2" class="pantalla oculto">
+    <h2>ACTIVIDAD 2: “Cazador de figuras”</h2>
+    <p><strong>Texto:</strong> “El reloj corría sin descanso mientras la ciudad dormía.”</p>
+    <form id="form2">
+      <label><input type="checkbox" name="figura" value="metáfora"> Metáfora</label><br>
+      <label><input type="checkbox" name="figura" value="personificación"> Personificación</label><br>
+      <label><input type="checkbox" name="figura" value="símil"> Símil</label><br>
+      <label><input type="checkbox" name="figura" value="hipérbole"> Hipérbole</label><br>
+    </form>
+    <button onclick="evaluarSeleccion()">Revisar</button>
+    <button onclick="resetearSeleccion()">Resetear</button>
+    <p id="feedback2"></p>
+    <button onclick="mostrarPantalla('actividad3')">Siguiente</button>
+  </section>
+
+  <!-- Actividad 3: Mi frase creativa -->
+  <section id="actividad3" class="pantalla oculto">
+    <h2>ACTIVIDAD 3: “Mi frase creativa”</h2>
+    <label for="figura3">Elige una figura literaria:</label>
+    <select id="figura3">
+      <option value="metáfora">Metáfora</option>
+      <option value="personificación">Personificación</option>
+      <option value="símil">Símil</option>
+      <option value="hipérbole">Hipérbole</option>
+    </select>
+    <button onclick="generarPalabras()">Generar palabras</button>
+    <p id="palabrasAleatorias"></p>
+    <textarea id="fraseCreativa" placeholder="Escribe tu frase aquí..."></textarea>
+    <button onclick="mostrarPantalla('formativa')">Siguiente</button>
+  </section>
+
+  <!-- Evaluación formativa -->
+  <section id="formativa" class="pantalla oculto">
+    <h2>Evaluación Formativa: “Caja de ideas locas”</h2>
+    <textarea id="fraseLibre" placeholder="Escribe tu frase creativa..."></textarea>
+    <button onclick="evaluarLibre()">Evaluar</button>
+    <p id="feedbackLibre"></p>
+    <button onclick="mostrarPantalla('sumativa')">Siguiente</button>
+  </section>
+
+  <!-- Evaluación sumativa -->
+  <section id="sumativa" class="pantalla oculto">
+    <h2>Evaluación Sumativa: “Mi mini cuento con estilo”</h2>
+    <textarea id="cuento" rows="6" placeholder="Escribe tu cuento aquí..."></textarea>
+    <h3>Rúbrica:</h3>
+    <table border="1">
+      <tr><th>Criterio</th><th>Sí</th><th>No</th></tr>
+      <tr><td>Usó al menos tres figuras literarias diferentes</td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>
+      <tr><td>El texto es creativo y coherente</td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>
+      <tr><td>Las figuras enriquecen la narración</td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>
+    </table>
+  </section>
+</body>
+</html>
